@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Конвертер валют</string>
+    <string name="default_left_char_code">RUB</string>
+    <string name="default_right_char_code">USD</string>
+    <string name="change_valute_button_text">Изменить валюту</string>
+    <string name="positive_button_text">Сохранить</string>
+    <string name="neutral_button_text">Отмена</string>
+    <string name="dialog_title">Выбор валюты</string>
+    <string name="main_activity_error_message">Что-то пошло не так</string>
+    <string name="main_activity_input_error_message">Введены некорректные данные</string>
+</resources>
