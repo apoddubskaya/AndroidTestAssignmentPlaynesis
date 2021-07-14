@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity(), IMainActivity {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        presenter.onCreateHandler(
+                binding.leftTextView.text.isEmpty(),
+                binding.rightTextView.text.isEmpty()
+        )
         binding.leftButton.setOnClickListener {
             presenter.onButtonClickHandler(
                     binding.leftTextView.text,
@@ -65,6 +69,8 @@ class MainActivity : AppCompatActivity(), IMainActivity {
                 Toast.LENGTH_LONG
         ).show()
     }
+
+
 
     override fun setLeftEditTextValue(text: String) {
         binding.leftEditText.setText(text)

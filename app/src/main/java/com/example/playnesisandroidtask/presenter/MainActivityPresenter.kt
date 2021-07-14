@@ -5,6 +5,9 @@ import com.example.playnesisandroidtask.view.IMainActivity
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 
+const val LEFT_CHAR_CODE_INITIAL_VALUE: String = "RUB"
+const val RIGHT_CHAR_CODE_INITIAL_VALUE: String = "USD"
+
 class MainActivityPresenter(private val view: IMainActivity) {
     enum class Side{
         LEFT, RIGHT
@@ -79,5 +82,12 @@ class MainActivityPresenter(private val view: IMainActivity) {
             Side.LEFT -> view.setLeftTextViewValue(currentCharCode)
             Side.RIGHT -> view.setRightTextViewValue(currentCharCode)
         }
+    }
+
+    fun onCreateHandler(isLeftTextEmpty: Boolean, isRightTextEmpty: Boolean) {
+        if (isLeftTextEmpty)
+            view.setLeftTextViewValue(LEFT_CHAR_CODE_INITIAL_VALUE)
+        if (isRightTextEmpty)
+            view.setRightTextViewValue(RIGHT_CHAR_CODE_INITIAL_VALUE)
     }
 }
